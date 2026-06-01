@@ -46,7 +46,9 @@ for mac
 9. Please keep in mind, ultralytics may have a yellow line under neath it, then you need to press cmd shift p and select python interpreter, then select (img below)
 <img width="285" height="22" alt="image" src="https://github.com/user-attachments/assets/d6216d41-c088-412b-b9ab-05e2c1cac447" />
 
-10. run the file
+10. Nesscessary step, find a video of auckland plane spotting, download it, and insert it into the project folder, name it "auckland_landing.mp4"
+
+11. run the file
 
 
 setup should not take longer than 5 minutes
@@ -56,7 +58,7 @@ setup should not take longer than 5 minutes
 
 This has only been tested on Mac; lmk if it doesn't work.
 
-I recommend that you only use clear-sky plane spotting videos at Auckland Airport, as the model has been specifically trained on this data; however, in the future, the model will contain data from major hubs.  (UPDATE - I HAVE ALREADY LOADED A VIDEO, NO NEED TO CHANGED IT)
+you must download a video of auckland plane spotting online in clear blue skies, insert the video into the project folder and name it auckland_landing.mp4, other wise change the name in the final track.py file if you would rather call your video a different name.
 
 current training data includes 
 
