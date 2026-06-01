@@ -81,3 +81,14 @@ atr
 b787
 
 in future the model will be trained with 737 and other common aircraft.
+
+<img width="931" height="473" alt="image" src="https://github.com/user-attachments/assets/938e1fc2-3386-4e15-be34-e57a759fd9a6" />
+
+<img width="937" height="375" alt="image" src="https://github.com/user-attachments/assets/b749aaf5-79cd-4bb7-b11f-4597a9773cec" />
+
+<img width="911" height="369" alt="image" src="https://github.com/user-attachments/assets/3e110268-0ca3-40fc-ba16-9bb7a704d6e1" />
+
+<img width="410" height="189" alt="image" src="https://github.com/user-attachments/assets/6def1964-8ffb-48de-8d4d-9a386ff673b4" />
+
+
+
