@@ -4,16 +4,15 @@ import numpy as np
 from collections import deque
 from ultralytics import YOLO
 
-# --- SETUP ---
-model = YOLO('/Users/josh/machine_learning/runs/classify/aircraft_train-9/weights/best.pt') 
+model = YOLO('WHERE ITS INSTALLED/aircraft_train-9/weights/best.pt') 
 detector = YOLO('yolo11n.pt') 
-cap = cv2.VideoCapture('/Users/josh/machine_learning/videos/iphone17promax.mp4')
+cap = cv2.VideoCapture('video here.mp4')
 
-# --- TUNING PARAMETERS ("A Little Less") ---
-gui_threshold = 0.80     # 🎯 Lowered from 0.85: Fires faster now that soft voting is stable
-gui_cooldown = 4         # ⏱️ Lowered from 10s: Snappier resets between detections
-cooldown_duration = 2    # Startup delay
-MAX_MEM_FRAMES = 5       # Size of the probability smoothing window
+
+gui_threshold = 0.80     
+gui_cooldown = 4         
+cooldown_duration = 2   
+MAX_MEM_FRAMES = 5     
 
 start_time = time.time()
 last_gui_time = 0
@@ -21,7 +20,6 @@ waiting_for_input = False
 gui_start_time = 0  
 found_label = "Scanning..."
 
-# --- SOFT VOTING MEMORY ---
 track_history = {}
 
 print("--- TRACKER ACTIVE: ESC to Close ---")
@@ -36,7 +34,7 @@ while cap.isOpened():
     if key == 27: 
         break
 
-    # 1. STARTUP COOLDOWN
+    
     if current_time - start_time < cooldown_duration:
         remaining = int(cooldown_duration - (current_time - start_time))
         cv2.putText(frame, f"Starting in {remaining}s...", (50, 50), 
@@ -44,7 +42,7 @@ while cap.isOpened():
         cv2.imshow('Aircraft Tracker', frame)
         continue
 
-    # 2. GUI INTERRUPT
+   
     if waiting_for_input:
         elapsed_gui_time = current_time - gui_start_time
         remaining_gui_time = max(0.0, 2.0 - elapsed_gui_time)
@@ -61,7 +59,7 @@ while cap.isOpened():
             last_gui_time = current_time
         continue
 
-    # 3. DETECTION & TRACKING
+   
     results = detector.track(frame, classes=[4], conf=0.45, iou=0.4, persist=True, verbose=False)
     
     if results and len(results[0].boxes) > 0:
@@ -82,7 +80,7 @@ while cap.isOpened():
                     
                     track_history[track_id].append(raw_probs)
                     
-                    # Compute running average of probabilities
+                   
                     smoothed_probs = np.mean(track_history[track_id], axis=0)
                     top1_idx = np.argmax(smoothed_probs)
                     
@@ -93,12 +91,12 @@ while cap.isOpened():
                     label = pred[0].names[top1_idx]
                     confidence = pred[0].probs.top1conf.item()
                 
-                # Draw HUD
+             
                 cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 255, 0), 2)
                 display_text = f"ID {track_id}: {label} ({confidence:.1%})" if track_id is not None else f"{label} ({confidence:.1%})"
                 cv2.putText(frame, display_text, (x1, y1 - 10), cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255, 0), 2)
                 
-                # Trigger GUI based on the new custom thresholds
+            
                 if (confidence > gui_threshold) and (current_time - last_gui_time > gui_cooldown):
                     found_label = label
                     gui_start_time = current_time  
