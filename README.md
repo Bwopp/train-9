@@ -80,7 +80,20 @@ b747
 atr 
 b787
 
-in future the model will be trained with 737 and other common aircraft.
+In the future, the model will be trained with 737 and other common aircraft.
+
+# --- FAQ --- 
+
+Are there better alternatives? - Yes, fgvc-aircraft is much better at detecting aircraft; however, the dataset was developed in 2013 and fails to recognise modern planes, like the A350.
+
+Why is it not accurate? - Train 9 was mainly trained on Auckland Airport plane-spotting videos, Frankfurt, Paris and Los Angeles airport, which means it works better in those environments. The data is accurate; however, depending on the weather and the model of aircraft, results may differ.
+
+When will it be retrained and get smarter? - I am currently working on retraining the model; Train 10 will be out shortly, within the coming months, as training it takes a significant amount of human input.
+
+Can you include more planes? - Yes, in Train 10, I will be including the 737, A321, Embraer family, Bombardier family, "Generic prop plane", "Generic private jet", 757, A340 and 777x.
+
+How do I use this? - At the moment, I am working on creating an app to run this on your phone; however at the moment, it can be run through a computer using the video feature, or you can switch to webcam and direct your webcam at aircraft, additionally, you can use an external webcam, or camera, synced to the program. 
+
 
 <img width="931" height="473" alt="image" src="https://github.com/user-attachments/assets/938e1fc2-3386-4e15-be34-e57a759fd9a6" />
 
