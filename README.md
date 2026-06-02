@@ -94,6 +94,10 @@ Can you include more planes? - Yes, in Train 10, I will be including the 737, A3
 
 How do I use this? - At the moment, I am working on creating an app to run this on your phone; however at the moment, it can be run through a computer using the video feature, or you can switch to webcam and direct your webcam at aircraft, additionally, you can use an external webcam, or camera, synced to the program. 
 
+# --- FUTHER QUESTIONS ---
+
+Contact me - joshmck.site
+
 
 <img width="931" height="473" alt="image" src="https://github.com/user-attachments/assets/938e1fc2-3386-4e15-be34-e57a759fd9a6" />
 
