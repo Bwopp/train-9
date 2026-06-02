@@ -96,7 +96,7 @@ How do I use this? - At the moment, I am working on creating an app to run this 
 
 # --- FUTHER QUESTIONS ---
 
-Contact me - joshmck.site
+Contact me - [joshmck.site](https://joshmck.site/contact.html)
 
 
 <img width="931" height="473" alt="image" src="https://github.com/user-attachments/assets/938e1fc2-3386-4e15-be34-e57a759fd9a6" />
