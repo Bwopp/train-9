@@ -3,10 +3,11 @@ import time
 import numpy as np
 from collections import deque
 from ultralytics import YOLO
+from tkinter.filedialog import askopenfilename
 
 model = YOLO('aircraft_train-9/weights/best.pt') 
 detector = YOLO('yolo11n.pt') 
-cap = cv2.VideoCapture('auckland_landing.mp4')
+cap = cv2.VideoCapture(askopenfilename(filetypes=[("mp4", ".mp4")]))
 
 
 gui_threshold = 0.80     
