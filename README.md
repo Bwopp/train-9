@@ -1,88 +1,176 @@
-# --- WARNING READ "FINAL" AT THE BOTTOM, PLEASE READ THROUGH FULL STEPS ---
+# --- Please read Through [Final](#final) ---
 
-# --- SETUP ---
+# Train-9 Setup
 
-Required Dependencies Checklist
-System Environment
+## Dependencies
+| Package | Version |
+|---------|---------|
+| Python | 3.14.4 |
+| OpenCV | 4.13.0 |
+| Ultralytics | 8.4.48 |
+| PyTorch | 2.12.0 |
+| Torchvision | 0.27.0 |
+| NumPy | 2.4.4 |
 
-Python 3.12.14
+## Getting the Project
+```bash
+git clone https://github.com/Josh532/train-9.git
+```
+```bash
+cd train-9
+```
+Or download and extract the ZIP from GitHub, then navigate into the folder.
 
-External Packages
+---
 
-ultralytics (Version 8.4.56)
+## Mac
+Installing via Homebrew is recommended - [Homebrew Website](https://brew.sh/)
 
-opencv-python (Latest stable release compatible with Python 3.12)
+1. Install Homebrew:
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
 
-numpy (Latest stable release compatible with Python 3.12)
+2. Install Python 3.14:
+```bash
+brew install python@3.14
+```
 
-Model Files
+3. Create a virtual environment (Make sure you are in the train-9 directory first):
+```bash
+python3.14 -m venv ml_env
+```
 
-yolo11n.pt (The base object detection weights file)
+4. Activate the virtual environment:
+```bash
+source ml_env/bin/activate
+```
 
-best.pt (The custom classification weights file located inside the aircraft_train-9/weights/ folder)
+5. Install dependencies:
+```bash
+pip install opencv-python==4.13.0 ultralytics==8.4.48 torch==2.12.0 torchvision==0.27.0 numpy==2.4.4
+```
 
-Media
+6. Run the program:
+```bash
+python FINAL_Tracker.py
+```
+A file picker will open, select your video file.
 
-Input video file (Any target aviation video, such as an .mp4 file)
+---
 
+## Windows
 
-# --- SETUP STEPS ---
-for mac
+1. Install Python 3.14:
+```powershell
+winget install Python.Python.3.14
+```
 
-1. /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" (INSTALL HOMEBREW VIA TERMINAL
+2. Restart your terminal, then create a virtual environment (Make sure you are in the train-9 directory first):
+```powershell
+python -m venv ml_env
+```
 
-2. Create new folder, (after installing homebrew) then run this cmd, cd ~/foldername (YOU MUST DO THIS EVEN IF YOU HAVE HOMEBREW ALREADY)
+3. Activate the virtual environment:
+```powershell
+ml_env\Scripts\activate
+```
 
-3. source ml_env/bin/activate
+4. Install dependencies:
+```powershell
+pip install opencv-python==4.13.0 ultralytics==8.4.48 torch==2.12.0 torchvision==0.27.0 numpy==2.4.4
+```
 
-5. brew install python@3.12
+5. Run the program:
+```powershell
+python FINAL_Tracker.py
+```
+A file picker will open, select your video file.
 
-6. python3.12 -m venv ml_env
+---
 
-7. source ml_env/bin/activate
+## Linux
+1. Install Python 3.14 and Tkinter from your distro's package manager:
 
-8. pip install ultralytics==8.4.56 opencv-python numpy
+2. Create a virtual environment (Make sure you are in the train-9 directory first):
+```bash
+python3.14 -m venv ml_env
+```
 
-9. Please keep in mind, ultralytics may have a yellow line under neath it, then you need to press cmd shift p and select python interpreter, then select (img below)
-<img width="285" height="22" alt="image" src="https://github.com/user-attachments/assets/d6216d41-c088-412b-b9ab-05e2c1cac447" />
+3. Activate the virtual environment:
+```bash
+source ml_env/bin/activate
+```
 
-10. Nesscessary step, find a video of auckland plane spotting, download it, and insert it into the project folder, name it "auckland_landing.mp4"
+4. Install dependencies:
+```bash
+pip install opencv-python==4.13.0 ultralytics==8.4.48 torch==2.12.0 torchvision==0.27.0 numpy==2.4.4
+```
 
-11. run the file
+5. Run the program:
+```bash
+python FINAL_Tracker.py
+```
+A file picker will open, select your video file.
 
+---
 
-setup should not take longer than 5 minutes
+## NixOS / Nix / Nix-Darwin
 
+1. Make sure flakes and nix-command are enabled in your configuration:
+```nix
+nix.settings.experimental-features = [ "nix-command" "flakes" ];
+```
 
-# --- FINAL ---
+2. Enter the development shell (Make sure you are in the train-9 directory first):
+```bash
+nix develop
+```
 
-This has only been tested on Mac; lmk if it doesn't work.
+3. Run the program:
+```bash
+python FINAL_Tracker.py
+```
+A file picker will open, select your video file.
 
-you must download a video of auckland plane spotting online in clear blue skies, insert the video into the project folder and name it auckland_landing.mp4, other wise change the name in the final track.py file if you would rather call your video a different name.
+## Final
 
-current training data includes 
+This has only been tested on Mac and NixOS
 
-auckland Airport - day - most confident
-lax - night and day - less confident
-frankfurt - night - less confident
-paris - day - less confident
+The Windows and "Legacy" Linux insturctions have not been tested, additionally the Nix instructions have only been tested on NixOS and not Nix-Darwin or Nix installed on another distro.
+Please create an issue if they are wrong.
 
-the model is only 95% confident and can only recognise 
+Mac instructions were recently changed and should still be working.
 
-a320
-a330
-a350
-a380
-md11
-b767
-b777
-b747
-atr 
-b787
+Your video should be using an mp4 container
+
+Current training data includes :
+
+| Location | Time | Confidence |
+|---------|---------|---------|
+| Auckland Airport | Day | Most confident |
+| LAX | Night and day | Less confident |
+| Frankfurt | Night | Less confident |
+| Paris | Day | Less confident |
+
+The model is only 95% confident and can only recognise:
+
+  A320
+  A330
+  A350
+  A380
+
+  767
+  777
+  747
+  787
+  
+  ATR
+  MD11
 
 In the future, the model will be trained with 737 and other common aircraft.
 
-# --- FAQ --- 
+## FAQ
 
 Are there better alternatives? - Yes, fgvc-aircraft is much better at detecting aircraft; however, the dataset was developed in 2013 and fails to recognise modern planes, like the A350.
 
@@ -94,9 +182,11 @@ Can you include more planes? - Yes, in Train 10, I will be including the 737, A3
 
 How do I use this? - At the moment, I am working on creating an app to run this on your phone; however at the moment, it can be run through a computer using the video feature, or you can switch to webcam and direct your webcam at aircraft, additionally, you can use an external webcam, or camera, synced to the program. 
 
-# --- FUTHER QUESTIONS ---
+## Further Questions
 
 Contact me - [joshmck.site](https://joshmck.site/contact.html)
+or
+Leave an issue on github
 
 
 <img width="931" height="473" alt="image" src="https://github.com/user-attachments/assets/938e1fc2-3386-4e15-be34-e57a759fd9a6" />
