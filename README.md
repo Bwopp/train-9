@@ -24,7 +24,7 @@ Or download and extract the ZIP from GitHub, then navigate into the folder.
 ---
 
 ## Mac
-Installing via Homebrew is recommended — [Homebrew Website](https://brew.sh/)
+Installing via Homebrew is recommended - [Homebrew Website](https://brew.sh/)
 
 1. Install Homebrew:
 ```bash
@@ -36,7 +36,7 @@ Installing via Homebrew is recommended — [Homebrew Website](https://brew.sh/)
 brew install python@3.14
 ```
 
-3. Create a virtual environment:
+3. Create a virtual environment (Make sure you are in the train-9 directory first):
 ```bash
 python3.14 -m venv ml_env
 ```
@@ -66,7 +66,7 @@ A file picker will open, select your video file.
 winget install Python.Python.3.14
 ```
 
-2. Restart your terminal, then create a virtual environment:
+2. Restart your terminal, then create a virtual environment (Make sure you are in the train-9 directory first):
 ```powershell
 python -m venv ml_env
 ```
@@ -92,7 +92,7 @@ A file picker will open, select your video file.
 ## Linux
 1. Install Python 3.14 and Tkinter from your distro's package manager:
 
-2. Create a virtual environment:
+2. Create a virtual environment (Make sure you are in the train-9 directory first):
 ```bash
 python3.14 -m venv ml_env
 ```
@@ -122,7 +122,7 @@ A file picker will open, select your video file.
 nix.settings.experimental-features = [ "nix-command" "flakes" ];
 ```
 
-2. Enter the development shell:
+2. Enter the development shell (Make sure you are in the train-9 directory first):
 ```bash
 nix develop
 ```
@@ -140,11 +140,11 @@ This has only been tested on Mac and NixOS
 The Windows and "Legacy" Linux insturctions have not been tested, additionally the Nix instructions have only been tested on NixOS and not Nix-Darwin or Nix installed on another distro.
 Please create an issue if they are wrong.
 
+Mac instructions were recently changed and should still be working.
+
 Your video should be using an mp4 container
 
 Current training data includes :
-
-
 
 | Location | Time | Confidence |
 |---------|---------|---------|
