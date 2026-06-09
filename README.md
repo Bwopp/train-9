@@ -135,18 +135,23 @@ A file picker will open, select your video file.
 
 ## Final
 
-This has only been tested on Mac and NixOS; Create an issue if you are experiencing issues
+This has only been tested on Mac and NixOS
 
-The Windows and "Legacy" Linux insturctions have not been tested, please create an issue if they are wrong
+The Windows and "Legacy" Linux insturctions have not been tested, additionally the Nix instructions have only been tested on NixOS and not Nix-Darwin or Nix installed on another distro.
+Please create an issue if they are wrong.
 
 Your video should be using an mp4 container
 
-current training data includes 
+Current training data includes :
 
-Auckland Airport - Day - Most confident
-LAX - Night and day - Less confident
-Frankfurt - Night - Less confident
-Paris - Day - Less confident
+
+
+| Location | Time | Confidence |
+|---------|---------|---------|
+| Auckland Airport | Day | Most confident |
+| LAX | Night and day | Less confident |
+| Frankfurt | Night | Less confident |
+| Paris | Day | Less confident |
 
 The model is only 95% confident and can only recognise:
 
@@ -155,12 +160,12 @@ The model is only 95% confident and can only recognise:
   A350
   A380
 
-  b767
-  b777
-  b747
-  b787
+  767
+  777
+  747
+  787
   
-  atr
+  ATR
   MD11
 
 In the future, the model will be trained with 737 and other common aircraft.
