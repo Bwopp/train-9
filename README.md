@@ -133,6 +133,19 @@ python FINAL_Tracker.py
 ```
 A file picker will open, select your video file.
 
+## NixOS / Nix / Nix-Darwin - With devenv
+
+1. Enter the development shell (Make sure you are in the train-9 directory first):
+```bash
+devenv shell
+```
+
+2. Run the program:
+```bash
+python FINAL_Tracker.py
+```
+A file picker will open, select your video file.
+
 ## Final
 
 This has only been tested on Mac and NixOS

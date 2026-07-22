@@ -13,7 +13,6 @@
           packageOverrides = self: super: {
             opencv4 = super.opencv4.override {
               enableGtk2 = true;
-              enableGtk3 = true;
             };
           };
         };
@@ -27,9 +26,6 @@
         devShells.default = pkgs.mkShell {
           packages = [
             pythonEnv
-            pkgs.gtk2
-            pkgs.gtk3
-            pkgs.glib
           ];
         };
       });
